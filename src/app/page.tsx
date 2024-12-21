@@ -118,7 +118,7 @@ export default function Home() {
 {/* Card 1 for Mobile*/}
 <div className="flex sm:hidden absolute -top-24 left-9 bg-blue-100 rounded-lg shadow-md w-[84%]">
     <img
-      src="/ads/ads1ForMobile.png"
+      src="/ads/Ads1ForMobile.png"
       alt="Car"
       className="w-full h-full object-contain rounded-lg"
     />
@@ -132,7 +132,7 @@ export default function Home() {
   {/* Card 1 */}
   <div className="hidden sm:flex sm:relative sm:bg-blue-100 sm:rounded-lg sm:shadow-md">
     <img
-      src="/ads/ads1.png"
+      src="/ads/Ads1.png"
       alt="Car"
       className="w-full h-full object-contain"
     />
@@ -148,7 +148,7 @@ export default function Home() {
         <div className="hidden sm:flex sm:relative sm:bg-blue-100 sm:rounded-lg sm:shadow-md
         ">
     <img
-      src="/ads/ads2.png"
+      src="/ads/Ads2.png"
       alt="Car"
       className="w-full h-full object-contain"
     />
