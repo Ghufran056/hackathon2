@@ -7,10 +7,10 @@ import HeartButton from "@/components/HeartButton";
 
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function CategoryCarRent() {
   const [showMore, setShowMore] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isValue, setIsValue] = useState(false);
+
     // Toggle the sidebar
     const toggleSidebar = () => {
       setIsOpen(!isOpen);
@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
          {/* for mobile */}
-         <div className={`sm:hidden bg-white  w-full ${isValue? "h-56": "h-64"}`}>
-          <button className={`h-10 w-10 ml-4 mt-3 ${isValue? "block": "hidden"}`} onClick={toggleSidebar}><img src="./icons/lines.svg" className="h-full w-full" alt="" /></button>
+         <div className="sm:hidden bg-white  w-full h-56">
+          <button className="h-10 w-10 ml-4 mt-3" onClick={toggleSidebar}><img src="./icons/lines.svg" className="h-full w-full" alt="" /></button>
          <header>  
           <Navbar />
          </header>
@@ -37,10 +37,10 @@ export default function Home() {
     {/* Sidebar */}
     <div
         className={`${
-          isOpen ? "w-56 md:w-64" : "w-0"
-        } bg-black md:bg-white text-white md:text-black h-full md:absolute fixed top-0  left-0 z-50  overflow-y-auto transition-all duration-300`}
+          isOpen ? "w-56" : "w-0"
+        } bg-black md:bg-white md:w-56 lg:w-64 2xl:w-96 text-white md:text-black h-full md:absolute fixed top-0  left-0 z-50 md:z-20 overflow-y-auto transition-all duration-300`}
       >
-        <button className="text-[#555] absolute right-3 font-bold text-[28px] hover:text-[#e74c3c] transition-colors duration-300 ease-in-out" onClick={() => {
+        <button className="text-[#555] block md:hidden absolute right-3 font-bold text-[28px] hover:text-[#e74c3c] transition-colors duration-300 ease-in-out" onClick={() => {
           setIsOpen(!isOpen)
         }}>&times;</button>
       <div className="p-4">
@@ -103,70 +103,19 @@ export default function Home() {
 
     
     <div
-        className={`flex flex-col flex-1 transition-all duration-300 ${
-          isOpen ? "ml-0 overflow-x-hidden sm:ml-56 xl:ml-64" : "ml-0"
-        }`}
+        className="flex flex-col flex-1 transition-all duration-300 ml-0 sm:ml-56 xl:ml-64 2xl:ml-96 overflow-x-hidden  bg-[#F6F7F9]"
+         
       >
       <div className={`md:hidden  ${isOpen ? "block z-40 bg-black fixed opacity-20 top-0 h-full w-full": "hidden"}`}></div>
 
-        <div className="flex-1 p-8 lg:p-1 md:p-7 w-[425px] md:w-full lg:w-[1024px] xl:w-full  overflow-hidden sm:overflow-visible
+        <div className="flex-1 p-8 lg:p-1 md:p-4 w-[425px] md:w-full lg:w-full xl:w-full  overflow-hidden sm:overflow-visible
         ">
-      <div className={`grid grid-cols-1 sm:grid-cols-2 sm:gap-[32px] mt-9 md:mt-0 lg:mt-12 mb-8  lg:ml-7 w-full lg:w-[95%] transition-all duration-300
-      ${
-          isValue ? "hidden" : "block"
-        }`}>
-{/* Card 1 for Mobile*/}
-<div className="flex sm:hidden absolute -top-24 left-9 bg-blue-100 rounded-lg shadow-md w-[84%]">
-    <img
-      src="/ads/ads1ForMobile.png"
-      alt="Car"
-      className="w-full h-full object-contain rounded-lg"
-    />
-    <button
-      className="absolute top-[52.8%] left-[4.3%] transform -translate-y-1/2 bg-blue-600 text-white py-3 px-8 rounded-md z-10"
-    >
-      Rental Car
-    </button>
-  </div>
-
-  {/* Card 1 */}
-  <div className="hidden sm:flex sm:relative sm:bg-blue-100 sm:rounded-lg sm:shadow-md">
-    <img
-      src="/ads/ads1.png"
-      alt="Car"
-      className="w-full h-full object-contain"
-    />
-    <button
-      className="absolute xl:top-[56%] md:top-[53%] xl:left-[3.5%] md:left-[3.4%] bg-blue-600 md:text-[10px] lg:text-base 2xl:text-2xl text-white py-2 xl:py-3 2xl:py-7 px-4 2xl:px-14 xl:px-6 md:px-2 rounded-md  md:rounded-sm lg:rounded-md z-10 "
-    >
-      Rental Car
-    </button>
-  </div>
-
-
-        {/* Card 2 */}
-        <div className="hidden sm:flex sm:relative sm:bg-blue-100 sm:rounded-lg sm:shadow-md
-        ">
-    <img
-      src="/ads/ads2.png"
-      alt="Car"
-      className="w-full h-full object-contain"
-    />
-    <button
-      className="absolute xl:top-[56%] md:top-[53%] xl:left-[3.5%] md:left-[3.4%] bg-[rgba(84,166,255,1)] md:text-[10px] lg:text-base 2xl:text-2xl text-white py-2 xl:py-3 2xl:py-7 px-4 2xl:px-14 xl:px-6 md:px-2 rounded-md  md:rounded-sm lg:rounded-md z-10"
-    >
-      Rental Car 
-    </button>
-  </div>
-</div>
-
-      <div className="lg:p-6 lg:pl-8 lg:pr-8 w-[100%] lg:w-[100%]  md:w-[80%] md:ml-20 lg:ml-0">
+     
+      <div className="lg:p-6 lg:pl-10 xl:pl-8 lg:pr-2 xl:pr-8 w-[100%] lg:w-full  md:w-full  lg:ml-0 -mt-16 md:mt-0">
         {/* Search Section */}
 
-  <div className={`flex flex-col  sm:mt-0 lg:flex-row gap-9 lg:gap-0 lg:space-x-10 mb-9 ${
-          isValue ? "mt-0" : "mt-28"
-        }`}>
-  <div className="flex flex-wrap w-full  bg-white px-6 pt-2 rounded-lg">
+  <div className="flex flex-col  sm:mt-0 lg:flex-row gap-9 lg:gap-0 lg:space-x-3 xl:space-x-10 mt-20 mb-9">
+  <div className="flex flex-wrap w-full  bg-white px-6 xl:px-6 lg:pr-3 lg:pl-2 pt-2 border rounded-lg">
 
 <div className="flex w-full mb-4">
   <div className="h-4 w-4 lg:h-6 lg:w-6 rounded-full bg-[rgba(53,99,233,0.3)]  mr-2 mt-3 flex justify-center items-center">
@@ -203,20 +152,18 @@ export default function Home() {
 </div>
 </div>
 
-    <div className={`h-16 w-16  absolute lg:static  md:top-[10.7%] md:left-[47%] left-[42%] z-50 lg:h-14 lg:w-32 sm:mt-11 bg-[#3563E9] shadow-lg shadow-[rgba(53,99,233,0.5)] flex justify-center items-center rounded-lg
-     ${
-          isValue ? "mt-0 top-[5.8%]" : "mt-24 top-[7.3%]"
-        } ${
+    <div className={`h-16 w-16 mt-0 absolute top-[6.6%] xl:static lg:top-[1.5rem] lg:left-[36.8rem]  md:top-[6rem] md:left-[30rem] left-[42%] z-50 xl:h-14 xl:w-32 sm:mt-11 bg-[#3563E9] shadow-lg shadow-[rgba(53,99,233,0.5)] flex justify-center items-center rounded-lg
+      ${
           isOpen ? "hidden" : "block"
         }`}><img src="/icons/arrows.svg" alt="arrows"/></div>
-         {isOpen && ( <div className="h-16 w-16 mt-0 absolute top-[3.7%] lg:static  md:top-[10.7%] md:left-[47%] left-[42%] z-20 lg:h-14 lg:w-32 sm:mt-11 bg-[#3563E9] shadow-lg shadow-[rgba(53,99,233,0.5)] flex justify-center items-center rounded-lg"
+         {isOpen && ( <div className="h-16 w-16 mt-0 absolute top-[3.73%] lg:static  md:top-[10.7%] md:left-[47%] left-[42%] z-20 lg:h-14 lg:w-32 sm:mt-11 bg-[#3563E9] shadow-lg shadow-[rgba(53,99,233,0.5)] flex justify-center items-center rounded-lg"
          ><img src="/icons/arrows.svg" alt="arrows"/></div>
         )}
            
         
 
     {/* Second block */}
-    <div className="flex flex-wrap w-full bg-white px-6 py-2 rounded-lg">
+    <div className="flex flex-wrap w-full bg-white px-6 xl:px-6 lg:pr-1 lg:pl-5 py-2 border rounded-lg">
 
     <div className="flex w-full mb-4">
   <div className="h-4 w-4 lg:h-6 lg:w-6 rounded-full bg-[rgba(53,99,233,0.3)]  mr-2 mt-3 flex justify-center items-center">
@@ -256,54 +203,26 @@ export default function Home() {
 
 
         {/* Popular Cars Section */}
-        <div className="mb-9">
-
-          {/* for laptop */}
-          <div className="flex gap-x-[24%] md:gap-x-[57%] lg:gap-x-[77%] mb-7">
-          <h2 className={`md:text-xl text-sm  text-[#90A3BF] ${
-          isOpen ? "hidden" : "block"
-        } ${
-          isValue ? "hidden" : "block"
-        }`}> Popular Cars</h2>
-         { !isOpen && (<div>
-          <span className="hidden sm:block"> <button
-          className="px-4 text-[#3563E9] text-xl"
-        ><Link href="./Category-Car-Rent">View Link</Link> 
-          </button></span></div>)}
-        
-        {/* for Mobile */}
-        <span className={`flex sm:hidden ${
-          isValue ? "hidden" : "block"
-        }`}> <button
-          className="px-4 text-[#3563E9] text-sm"
-        >View Link
-          
-        </button></span>
-
-
-        </div>
-          <div className={`grid  
-          transition-all duration-300
-          ${
-              isOpen ? "grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-            }`}>
+        <div className="mb-6">
+          <div className="grid  
+          transition-all duration-300 lg:grid-cols-3 2xl:grid-cols-4 xl:grid-cols-3 gap-6 xl:gap-6 lg:gap-4 md:gap-4 grid-cols-1 md:grid-cols-2">
             
                 <div
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[9rem] md:mr-[5.2rem]">Koenigsegg</div>
+                   <div className="text-lg font-bold mt-2 mr-[9rem] md:mr-[2.8rem] lg:mr-[2.5rem] xl:mr-[5.2rem] 2xl:mr-[15rem]">Koenigsegg</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Sports</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image1.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$99.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left  lg:ml-2 xl:ml-5 ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$99.00/<span className="text-sm text-[#90A3BF]  mr-7 lg:mr-4 xl:mr-7 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white  px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-2 xl:py-2 xl:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -313,18 +232,18 @@ export default function Home() {
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[3rem]">Nissan GT - R</div>
+                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[1.7rem] lg:mr-[1rem] xl:mr-[4.3rem] 2xl:mr-[15rem]">Nissan GT - R</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Sports</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px]  mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image2.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                 <button className="bg-blue-600 text-white py-2 px-3 rounded-md "><Link href="./CarDetail">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem]  text-left lg:lg:ml-2 xl:ml-5 ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7 lg:mr-2 xl:mr-7 2xl:mr-36">day</span></p>
+                 <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md "><Link href="./CarDetail">
                     Rent Now</Link>
                   </button>
                   <p className="text-sm text-[#90A3BF] font-bold line-through mt-[-0.5rem]">$100.00</p>
@@ -334,23 +253,21 @@ export default function Home() {
 
 
                 <div
-                  className={`border rounded-lg p-4 shadow-md text-center bg-white md:block"
-                  ${
-                    isOpen ? "block md:block" : "hidden md:block"
-                  }`}>
+                  className="border rounded-lg p-4 shadow-md text-center bg-white hidden lg:block"
+                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[3.6rem]">Rolls - Royce</div>
+                   <div className="text-lg font-bold mt-2 mr-[3.6rem] lg:mr-[1.4rem] xl:mr-[3.6rem] 2xl:mr-[15rem]">Rolls - Royce</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Sports</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$96.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$96.00/<span className="text-sm text-[#90A3BF]  mr-7 lg:mr-2 xl:mr-7 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -358,24 +275,24 @@ export default function Home() {
 
 
                 <div
-                  className={`border rounded-lg p-4 shadow-md text-center bg-white transition-all duration-300
+                  className={`border rounded-lg p-4 shadow-md text-center md:hidden 2xl:block bg-white transition-all duration-300
       ${
-          isOpen ?  "block md:hidden  " : "md:block hidden"
+          isOpen ?  "block   " : " hidden"
         }`}
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[3rem]">Nissan GT - R</div>
+                   <div className="text-lg font-bold mt-2 mr-[3rem] 2xl:mr-[15rem]">Nissan GT - R</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Sports</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image2.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5  md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7 lg:mr-4 xl:mr-7 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   <p className="text-sm text-[#90A3BF] font-bold line-through mt-[-0.5rem]">$100.00</p>
@@ -386,29 +303,24 @@ export default function Home() {
         </div>
 
         {/* Recommendation Cars Section */}
-        <div className="mb-6">
-          <h2 className={`text-xl mb-9 text-[#90A3BF] ${isOpen ? "hidden" : "block"}`}>Recommended Cars</h2>
-          <div className={`grid  transition-all duration-300
-          ${
-              isOpen ? "grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            }`}>
+          <div className="grid  transition-all duration-300 lg:grid-cols-3 2xl:grid-cols-4 gap-6 xl:gap-6 lg:gap-4 md:gap-4  mb-6 grid-cols-1 md:grid-cols-2">
           
                 <div
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[3rem]">All New Rush</div>
+                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[1.6rem] lg:mr-[1.2rem] xl:mr-[4.8rem] 2xl:mr-[15rem]">All New Rush</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image5.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$72.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$72.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   <p className="text-sm text-[#90A3BF] font-bold line-through mt-[-0.5rem]">$100.00</p>
@@ -419,18 +331,18 @@ export default function Home() {
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[7rem]">CR - V</div>
+                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[5rem] lg:mr-[5rem] xl:mr-[7rem] 2xl:mr-[15rem]">CR - V</div>
                    <HeartButton/>
                   </div>
-                  <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
+                  <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6 ">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image4.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-6">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-6 md:ml-2 xl:ml-6 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -440,18 +352,18 @@ export default function Home() {
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[2.5rem]">All New Terios</div>
+                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[1rem] lg:mr-[0.6rem] xl:mr-[2.5rem] 2xl:mr-[15rem]">All New Terios</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Sports</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image3.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$74.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$74.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -464,18 +376,18 @@ export default function Home() {
         }`}
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[7rem]">CR - V</div>
+                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[5.2rem] lg:mr-[5rem] xl:mr-[7rem] 2xl:mr-[15rem]">CR - V</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image5.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -487,18 +399,18 @@ export default function Home() {
                     isOpen ? " block md:block " : "hidden md:block"
                   }`}>
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[1.3rem]">MG ZX Exclusice</div>
+                   <div className="text-lg lg:text-lg md:text-base font-bold mt-2 mr-[1.3rem] md:mr-[1.4rem] md:-ml-[1rem] lg:mr-[0.2rem] xl:mr-[1.3] 2xl:mr-[15rem]">MG ZX Exclusice</div>
                    <HeartButton/>
                   </div>
-                  <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Hatchback</div>
+                  <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6 md:ml-3 lg:ml-2 xl:ml-6">Hatchback</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image6.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$76.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$76.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -509,93 +421,92 @@ export default function Home() {
                     isOpen ? "block " : "hidden"
                   }`}>
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[4rem]">New MG ZS</div>
+                   <div className="text-lg font-bold mt-2 mr-[4rem] md:mr-[2.5rem] lg:mr-[1.6rem] xl:mr-[4rem] 2xl:mr-[15rem]">New MG ZS</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image7.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
                 </div>
                 <div
-                  className="hidden sm:block border rounded-lg p-4 shadow-md text-center bg-white"
-                >
+                  className={`md:hidden 2xl:block border rounded-lg p-4 shadow-md text-center bg-white transition-all duration-300"
+                ${
+          isOpen ? " block" : "hidden"
+        }`}>
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[1.3rem]">MG ZX Exclusice</div>
+                   <div className="text-lg font-bold mt-2 mr-[1.3rem] 2xl:mr-[15rem]">MG ZX Exclusice</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Hatchback</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image6.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$76.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$76.00/<span className="text-sm text-[#90A3BF]  mr-7 lg:mr-4 xl:mr-7 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
                 </div>
                 <div
-                  className={`hidden sm:block border rounded-lg p-4 shadow-md text-center bg-white transition-all duration-300
+                  className={` md:hidden 2xl:block border rounded-lg p-4 shadow-md text-center bg-white transition-all duration-300
       ${
-          isOpen ? "md:hidden block" : "md:block hidden"
+          isOpen ? " block" : "hidden"
         }`}
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[4rem]">New MG ZS</div>
+                   <div className="text-lg font-bold mt-2 mr-[4rem] 2xl:mr-[15rem]">New MG ZS</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image7.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7 lg:mr-4 xl:mr-7 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
                 </div>
             
-          </div>
+          
         </div>
 
      
         {/* Show More Button */}
         {showMore && (
-          <div className={`grid  transition-all duration-300
-            ${
-                isOpen ? "grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-              }`}>
+          <div className="grid  transition-all duration-300 lg:grid-cols-3 2xl:grid-cols-4 gap-6 xl:gap-6 lg:gap-4 md:gap-4 grid-cols-1 md:grid-cols-2">
           
           <div
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[9rem] md:mr-[3rem]">All New Rush</div>
+                   <div className="text-lg font-bold mt-2 mr-[9rem] md:mr-[1.6rem] lg:mr-[1.2rem] xl:mr-[4.8rem] 2xl:mr-[15rem]">All New Rush</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image5.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$72.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5  md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$72.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   <p className="text-sm text-[#90A3BF] font-bold line-through mt-[-0.5rem]">$100.00</p>
@@ -606,18 +517,18 @@ export default function Home() {
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[7rem]">CR - V</div>
+                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[5.2rem] lg:mr-[5rem] xl:mr-[7rem] 2xl:mr-[15rem]">CR - V</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image4.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-6">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-6 md:ml-2 lg:ml-2 xl:ml-6 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
@@ -627,42 +538,42 @@ export default function Home() {
                   className="border rounded-lg p-4 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[2.5rem]">All New Terios</div>
+                   <div className="text-lg font-bold mt-2 mr-[8rem] md:mr-[1rem] lg:mr-[0.6rem] xl:mr-[2.5rem] 2xl:mr-[15rem]">All New Terios</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">Sports</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image3.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$74.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$74.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
                 </div>
 
                 <div
-                  className={`border rounded-lg p-4 shadow-md text-center bg-white transition-all duration-300
+                  className={`lg:hidden 2xl:block border rounded-lg p-4 shadow-md text-center bg-white transition-all duration-300
       ${
           isOpen ? "hidden" : "block"
         }`}
                 >
                   <div className="text-left ml-6 flex">
-                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[7rem]">CR - V</div>
+                   <div className="text-lg font-bold mt-2 mr-[12rem] md:mr-[5.2rem] lg:mr-[7rem] 2xl:mr-[15rem]">CR - V</div>
                    <HeartButton/>
                   </div>
                   <div className="text-sm text-[#90A3BF] text-left font-bold relative mt-[-0.5rem] ml-6">SUV</div>
                     
-                  <div className=" h-[100px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
+                  <div className="h-[100px] xl:h-[115px] 2xl:h-[240px] mb-4 mt-14 sm:mt-11 flex items-center justify-center">
                     {/* Image Placeholder */}
                     <img src="/cars/image5.png" alt="car Image"  />
                   </div>
-                  <div className="mt-[4.3rem] text-left ml-5">
-                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-7">day</span></p>
-                  <button className="bg-blue-600 text-white py-2 px-3 rounded-md ">
+                  <div className="mt-[4.3rem] md:mt-10 lg:mt-[3.5rem] xl:mt-[4.3rem] text-left ml-5 lg:lg:ml-2 xl:ml-5 md:ml-2 2xl:ml-12">
+                  <p className="font-bold inline">$80.00/<span className="text-sm text-[#90A3BF]  mr-6 lg:mr-2 xl:mr-6 2xl:mr-36">day</span></p>
+                  <button className="bg-blue-600 text-white px-3 py-2 md:py-2 md:px-2 lg:py-2 lg:px-3 rounded-md ">
                     Rent Now
                   </button>
                   </div>
