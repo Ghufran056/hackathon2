@@ -1,8 +1,8 @@
 export default function Navbar() {
   return (
     <div className="bg-white h-30">
-    <div className="relative h-[80px] md:h-[124px] w-full md:border bg-white flex items-center px-4  md:px-8">
-     
+    <div className="relative h-[80px] md:h-[124px] w-full md:border bg-white flex justify-between items-center px-6 xl:pl-12 lg:px-8 md:px-6 md:pl-8">
+    <div className="flex lg:space-x-12 xl:space-x-20">
       {/* Text Logo */}
       <div
         className="text-[28px] font-bold leading-[36px] md:leading-[48px] 
@@ -13,9 +13,9 @@ export default function Navbar() {
 
       {/* Search Bar */}
       <div
-        className=" items-center mx-4 w-full max-w-[470px] md:w-[300px] h-7 md:h-11 lg:w-[440px]
+        className=" items-center mx-4 max-w-[470px] md:w-[280px] h-7 md:h-11 lg:w-[350px]
         bg-white rounded-full border border-[rgba(195,212,233,0.4)] px-3 py-1
-        hidden md:flex lg: ml-20 md:ml-5 xl:ml-24 xl:w-[500px]"
+        hidden md:flex lg: ml-20 md:ml-5  xl:w-[500px]"
       >
         {/* Search Icon */}
         <img
@@ -40,9 +40,10 @@ export default function Navbar() {
           className="w-5 h-5 text-gray-500"
         /></button>
       </div>
+      </div>
 
       
-       <div className="ml-[56%] lg:ml-[17%] xl:ml-[22%]  flex lg:space-x-4 md:space-x-3 md:ml-[8%]  2xl:ml-[58%]">
+       <div className=" flex lg:space-x-4 md:space-x-3 ">
         {/* Heart Button */}
         <button className=" hidden md:flex w-10 h-10 xl:w-12 xl:h-12 border border-[rgba(195,212,233,0.4)] rounded-full items-center justify-center">
           <img src="/icons/heart.svg" alt="Heart Icon" className="w-6 h-6" />
@@ -66,7 +67,7 @@ export default function Navbar() {
         </button>
 
         {/* Profile Image */}
-        <button>
+        <button >
         <img
           src="/icons/image.svg"
           alt="Profile Icon"
@@ -76,21 +77,21 @@ export default function Navbar() {
         </div>
 
         {/* Action Buttons */}
-      <div className="flex px-4 pb-6 w-full items-center ml-auto space-x-4 md:hidden ">
-        <div className="border rounded-lg">
+      <div className="flex pb-3 pt-1 px-6  w-full justify-between items-center  md:hidden ">
+        <div className="border rounded-lg py-3 pr-2  flex items-center">
         {/* Search Icon for Mobile */}
-        <button className="md:hidden pl-6 pt-2 ">
+        <button className="md:hidden ml-5 ">
           <img
             src="/icons/search.svg"
             alt="Search Icon"
-            className="w-6 h-6 text-gray-500"
+            className="w-6 h-7 object-contain text-gray-500"
           />
         </button>
          {/* Search Input */}
          <input
           type="search"
           placeholder="Search something here"
-          className="flex-1 bg-transparent border-none text-[19px] outline-none pl-2 pr-3 mb-4  text-gray-700"
+          className="flex-1 bg-transparent border-none text-lg outline-none pl-2    text-gray-700"
         />
         </div>
 
@@ -98,7 +99,7 @@ export default function Navbar() {
         <img
           src="/icons/filter.svg"
           alt="Filter Icon"
-          className="w-13 h-13 p-3 text-gray-500 border rounded-lg"
+          className="w-14 h-[52px] p-3 text-gray-500 border rounded-lg"
         />
       </div>
     </div>

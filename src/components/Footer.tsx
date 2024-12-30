@@ -5,7 +5,8 @@ export default function Footer() {
         w-full 
         h-[825px]
         sm:h-[480px]
-        bg-white
+        bg-transparent
+        md:bg-white
         flex flex-col /* Stack elements vertically */
         px-[40px] /* Padding for horizontal spacing */
         mx-auto 
