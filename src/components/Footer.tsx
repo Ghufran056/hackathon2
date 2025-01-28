@@ -1,3 +1,4 @@
+import "./styles/footer.css"
 export default function Footer() {
  
   return (
@@ -10,7 +11,8 @@ export default function Footer() {
         flex flex-col /* Stack elements vertically */
         px-[40px] /* Padding for horizontal spacing */
         mx-auto 
-        relative 
+        relative
+        footer-main-div 
       "
     >
 
@@ -54,6 +56,7 @@ export default function Footer() {
         {/* Right Inner Sections */}
         <div className="ml-0 flex flex-wrap mt-[45px] sm:flex-nowrap lg:ml-[220px] md:ml-20  xl:ml-[40%] 2xl:ml-[57%] gap-[34px] 2xl:gap-[63px] sm:mt-[75px]">
           {/* About Section */}
+          <div className="flex w-full justify-between sm:justify-normal">
           <div className="w-[152px] 2xl:w-[180px] lg:w-[140px] md:w-[100px] h-[244px] flex flex-col justify-around ">
             <div
               className="
@@ -71,7 +74,7 @@ export default function Footer() {
             </div>
           </div>
          {/* for mobile */}
-          <div className="sm:hidden w-[100px] 2xl:w-[180px] lg:w-[140px] md:w-[100px] h-[244px] flex flex-col justify-around ml-14">
+          <div className="sm:hidden w-[100px] 2xl:w-[180px] lg:w-[140px] md:w-[100px] h-[244px] flex flex-col justify-around">
             <div
               className="
                 text-[23px] sm:text-[20px] md:text-[20px] xl:text-[22px] 2xl:text-[25px] font-medium leading-[24px]
@@ -87,7 +90,7 @@ export default function Footer() {
               <div className="2xl:text-[20px] xl:text-[16px] lg:text-[14px] md:text-[12px] text-[#90A3BF] sm:text-[rgba(19,19,19,0.6)]">Facebook</div>
             </div>
           </div>
-        
+          </div>
 
           {/* Community Section */}
           <div className="w-[152px] 2xl:w-[180px] lg:w-[140px] md:w-[100px] h-[244px] flex flex-col justify-around ">

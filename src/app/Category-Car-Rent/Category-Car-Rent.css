@@ -1,0 +1,63 @@
+@media(max-width:497px){
+    .pickup-search{
+        padding: 8px; 
+    }
+    .pickup-location-input{
+        margin-right: 6px;
+    }
+    .pickup-location{
+        margin-right: 7px;
+    }
+    .pickup-date{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .date-input{
+        padding: 0px
+    }
+    .pickup-time{
+        margin-left: 6px;
+    }
+    .pickup-time-input{
+        padding: 0;
+    }
+    
+    .dropoff-search{
+        padding: 8px; 
+    }
+    .dropoff-location-input{
+        margin-right: 6px;
+    }
+    .dropoff-location{
+        margin-right: 7px;
+    }
+    .dropoff-date{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .dropoff-date-input{
+        padding: 0px
+    }
+    .dropoff-time{
+        margin-left: 6px;
+    }
+    .dropoff-time-input{
+        padding: 0;
+    }
+    }
+    
+    @media(max-width: 350px){
+        .pickup-date{
+            padding-left: 6px;
+            padding-right: 6px;
+            width: 90px;
+        }
+        .dropoff-date{
+            padding-left: 6px;
+            padding-right: 6px;
+            width: 90px;
+        }
+        .showMore-button-div{
+            width: 80%;
+        }
+    }

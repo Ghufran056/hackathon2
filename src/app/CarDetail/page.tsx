@@ -4,6 +4,7 @@ import HeartButton from "@/components/HeartButton"
 import { useState } from "react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import "./CarDetail.css"
 export default function CarDetail() {
   let[show, setShow] = useState(0)
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ return(
                    <header>  
                     <Navbar />
                      </header>
-                    <div className="h-16 w-24 block md:hidden rounded bg-white absolute z-40 top-[18%] right-[3.8%]"></div>
+                    <div className="h-[70px] w-24 block md:hidden rounded bg-white absolute z-40 top-[14.8%] right-[3.8%]"></div>
                     </div>
          {/* for other device */}
            < div className="hidden sm:block">
@@ -154,7 +155,7 @@ return(
           <img
             src="/ads/car.png"
             alt="Car"
-            className="w-[160px] md:w-[170px] lg:w-[160px] h-[110px] md:h-[70px] lg:h-[90px] xl:h-[130px] 2xl:h-[230px] 2xl:w-[340px] rounded-lg 2xl:rounded-2xl"
+            className="w-[160px] md:w-[170px] lg:w-[160px] carPics h-[110px] md:h-[70px] lg:h-[90px] xl:h-[130px] 2xl:h-[230px] 2xl:w-[340px] rounded-lg 2xl:rounded-2xl"
           />
         </button>
         <button className="p-2 md:p-1 lg:p-2 2xl:p-5 border-2 border-transparent hover:border-[#3563E9] rounded-lg 2xl:rounded-2xl focus:scale-[0.9]
@@ -164,7 +165,7 @@ return(
           <img
             src="/ads/carinterior.png"
             alt="Car Interior"
-            className="w-[160px] md:w-[170px] lg:w-[160px] h-[110px] md:h-[70px] lg:h-[90px] xl:h-[130px] 2xl:h-[230px] 2xl:w-[340px] rounded-lg 2xl:rounded-2xl"
+            className="w-[160px] md:w-[170px] lg:w-[160px] carPics h-[110px] md:h-[70px] lg:h-[90px] xl:h-[130px] 2xl:h-[230px] 2xl:w-[340px] rounded-lg 2xl:rounded-2xl"
           />
         </button>
         <button className = "p-2 md:p-1 lg:p-2 2xl:p-5 border-2 border-transparent hover:border-[#3563E9] rounded-lg 2xl:rounded-2xl focus:scale-[0.9]"
@@ -173,7 +174,7 @@ return(
           <img
             src="/ads/carseat.png"
             alt="Car Seats"
-            className="w-[160px] md:w-[170px] lg:w-[160px] h-[110px] md:h-[70px] lg:h-[90px] xl:h-[130px] 2xl:h-[230px] 2xl:w-[340px] rounded-lg 2xl:rounded-2xl"
+            className="w-[160px] md:w-[170px] lg:w-[160px] carPics h-[110px] md:h-[70px] lg:h-[90px] xl:h-[130px] 2xl:h-[230px] 2xl:w-[340px] rounded-lg 2xl:rounded-2xl"
           />
         </button>
       </div>
@@ -190,12 +191,12 @@ return(
         className="w-full h-[75%] 2xl:h-[70%]  rounded-lg"
       />
       
-      <div className="pb-6 px-5 md:px-3 md:pb-3 lg:px-4 lg:pb-6 xl:pb-6 xl:px-5 2xl:pb-14 2xl:px-11 text-left flex justify-between items-center">
+      <div className="pb-6 px-4 md:px-3 md:pb-3 lg:px-4 lg:pb-6 xl:pb-6 xl:px-5 2xl:pb-14 2xl:px-11 text-left flex justify-between items-center">
                   <div>
                   <p className="font-bold inline text-[24px] md:text-lg  lg:text-[24px] xl:text-[33px] 2xl:text-[63px]">$80.00/<span className=" text-[#90A3BF] text-sm md:text-xs lg:text-base xl:text-lg 2xl:text-[39px]">day</span></p>
                  <p className=" text-[#90A3BF] font-bold line-through text-sm md:text-xs lg:text-base xl:text-lg 2xl:text-[39px] 2xl:mt-5">$100.00</p>                
                  </div>
-                 <button className="bg-blue-600 text-white px-10 py-4 md:py-1 md:px-3 lg:py-3 lg:px-6 xl:py-5 xl:px-10 2xl:py-10 2xl:px-16  rounded-md md:rounded-sm xl:rounded-md "><Link href="./Payment-Car-Rent" className="text-base md:text-xs lg:text-sm xl:text-base 2xl:text-[36px]">
+                 <button className="bg-blue-600 text-white CarDetail-rent-button px-10 py-4 md:py-1 md:px-3 lg:py-3 lg:px-6 xl:py-5 xl:px-10 2xl:py-10 2xl:px-16  rounded-md md:rounded-sm xl:rounded-md "><Link href="./Payment-Car-Rent" className="text-base md:text-xs lg:text-sm xl:text-base 2xl:text-[36px]">
                     Rent Now</Link>
                   </button>
                  
@@ -259,7 +260,7 @@ className="px-4 text-[#3563E9] text-base font-medium"
 </button></span>
 </div>
 
-<div className="grid grid-cols-3 pl-7  md:px-4 2xl:p-14 lg:p-7 xl:p-8 overflow-x-scroll md:overflow-visible md:grid-cols-2 lg:grid-cols-3 lg:gap-5 2xl:gap-14 gap-6 md:gap-4 xl:gap-7">
+<div className="grid grid-cols-3 pl-7  md:px-4 2xl:p-14 lg:p-7 xl:p-8 overflow-x-scroll md:overflow-visible md:grid-cols-2 lg:grid-cols-3 lg:gap-5 2xl:gap-14 gap-6 md:gap-4 xl:gap-7 ">
             <div className="border rounded-lg w-[260px] md:w-auto 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
                 >
                   <div className="text-left  ml-6 lg:ml-0 xl:ml-3 flex justify-between">
@@ -281,7 +282,7 @@ className="px-4 text-[#3563E9] text-base font-medium"
                 </div>
 
                 <div
-                  className="border rounded-lg ml-36 md:ml-0 w-[260px] md:w-auto  2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
+                  className="border rounded-lg ml-36 popular-car2 md:ml-0 w-[260px] md:w-auto  2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
                 >
                   <div className="text-left ml-6 lg:ml-0 xl:ml-3 flex justify-between">
                    <div className="text-lg xl:text-xl 2xl:text-[32px] font-bold  mt-2 lg:mt-0 xl:mt-2">Nissan GT - R</div>
@@ -308,7 +309,7 @@ className="px-4 text-[#3563E9] text-base font-medium"
 
 
       <div
-        className="border lg:block ml-72 md:ml-0 w-[260px] md:w-auto rounded-lg 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white md:hidden">
+        className="border lg:block ml-72 popular-car3 md:ml-0 w-[260px] md:w-auto rounded-lg 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white md:hidden">
                     <div className="text-left mx-1 md:ml-6 lg:ml-0 xl:ml-3 flex justify-between">
                      <div className="text-lg xl:text-xl 2xl:text-[32px] font-bold mt-2 lg:mt-0 xl:mt-2">Rolls - Royce</div>
                      <HeartButton/>
@@ -372,7 +373,7 @@ className="px-4 text-[#3563E9]  text-base font-medium"
                  </div>
 
                 <div
-                  className="border rounded-lg ml-36 md:ml-0 w-[260px] md:w-auto 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
+                  className="border rounded-lg ml-36 recommeded-car1 md:ml-0 w-[260px] md:w-auto 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
                 >
                   <div className="text-left mx-1 md:ml-6 lg:ml-0 xl:ml-3 flex justify-between">
                    <div className="text-lg xl:text-xl 2xl:text-[32px] font-bold mt-2 ">CR - V</div>
@@ -393,7 +394,7 @@ className="px-4 text-[#3563E9]  text-base font-medium"
                 </div>
 
                 <div
-                  className="border rounded-lg ml-72 md:ml-0  w-[260px] md:w-auto 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
+                  className="border rounded-lg ml-72 recommeded-car2 md:ml-0  w-[260px] md:w-auto 2xl:rounded-2xl p-4 2xl:p-9 shadow-md text-center bg-white"
                 >
                  <div className="text-left mx-1 md:ml-6 lg:ml-0 xl:ml-3 flex justify-between">
                    <div className="text-lg xl:text-xl 2xl:text-[32px] font-bold mt-2 ">CR - V</div>

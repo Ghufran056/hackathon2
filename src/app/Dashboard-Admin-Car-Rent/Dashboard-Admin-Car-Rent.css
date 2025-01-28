@@ -1,0 +1,10 @@
+@media(max-width:367px){
+    .car-detail{
+        width: 80px;
+    }
+}
+@media(max-width:335px){
+    .car-name{
+        font-size: 14px;
+    }
+}

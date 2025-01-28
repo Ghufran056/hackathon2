@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react"
 import Navbar from "@/components/Navbar"
+import "./Dashboard-Admin-Car-Rent.css"
 export default function AdminCarRent() {
      const [isOpen, setIsOpen] = useState(false);
       // Toggle the sidebar
@@ -19,7 +20,7 @@ export default function AdminCarRent() {
                            alt="Profile Icon"
                             className="block md:hidden w-9 h-9 xl:w-12 xl:h-12 border border-[rgba(195,212,233,0.4)] rounded-full"
                             /></button>
-                            <div className="h-16 w-24 block md:hidden rounded bg-white absolute z-40 top-[18%] right-[3.8%]"></div>
+                            <div className="h-[70px] w-24 block md:hidden rounded bg-white absolute z-40 top-[14.8%] right-[3.8%]"></div>
                             </div>
                           <header>  
                            <Navbar />
@@ -256,57 +257,57 @@ export default function AdminCarRent() {
           {/* car1 */}
           <div className="flex items-center justify-between mt-4">
             <div className="flex  2xl:gap-10 xl:gap-5 lg:gap-2 gap-5 md:gap-2">
-            <img src="/cars/car1.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-24 xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 object-contain"/>
+            <img src="/cars/car1.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-24 xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 car-detail object-contain"/>
             <div className="flex flex-col justify-center lg:gap-2 md:gap-0 gap-2">
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">Nissan GT - R</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">Nissan GT - R</h3>
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-sm text-[#90A3BF]">Sport Car</p>
             </div>
             </div>
             <div className="flex flex-col lg:gap-2 md:gap-0 gap-2">
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-sm text-[#90A3BF] text-right">20 July</p>
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$80.00</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$80.00</h3>
             </div>
           </div>
           {/* car2 */}
           <div className="flex items-center justify-between border-t-[1.7px] border-[#C3D4E966] border-opacity-40">
             <div className="flex 2xl:gap-10 xl:gap-5 lg:gap-2 gap-5 md:gap-2">
-            <img src="/cars/car2.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-[100px] xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 object-contain"/>
+            <img src="/cars/car2.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-[100px] xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 car-detail object-contain"/>
             <div className="flex flex-col justify-center lg:gap-2 md:gap-0 gap-2">
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">Koegnigsegg</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">Koegnigsegg</h3>
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-xs text-[#90A3BF]">Sport Car</p>
             </div>
             </div>
             <div className="flex flex-col lg:gap-2 md:gap-0 gap-2">
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-sm text-[#90A3BF] text-right">19 July</p>
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$99.00</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$99.00</h3>
             </div>
           </div>
           {/* car3 */}
           <div className="flex items-center justify-between border-t-[1.7px] border-[#C3D4E966] border-opacity-40">
             <div className="flex 2xl:gap-10 xl:gap-5 lg:gap-2 gap-5 md:gap-2">
-            <img src="/cars/car3.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-[100px] xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 object-contain"/>
+            <img src="/cars/car3.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-[100px] xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 car-detail object-contain"/>
             <div className="flex flex-col justify-center lg:gap-2 md:gap-0 gap-2">
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">Rolls - Royce</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">Rolls - Royce</h3>
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-xs text-[#90A3BF] ">Sport Car</p>
             </div>
             </div>
             <div className="flex flex-col lg:gap-2 md:gap-0 gap-2">
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-sm text-[#90A3BF] text-right">18 July</p>
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$96.00</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$96.00</h3>
             </div>
           </div>
           {/* car4 */}
           <div className="flex items-center justify-between border-t-[1.7px] border-[#C3D4E966] border-opacity-40">
             <div className="flex 2xl:gap-10 xl:gap-5 lg:gap-2 gap-5 md:gap-2">
-            <img src="/cars/car4.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-[100px] xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 object-contain"/>
+            <img src="/cars/car4.png" alt="car picture" className="2xl:h-[183px] 2xl:w-48 xl:h-[100px] xl:w-32 lg:h-[85px] lg:w-28 md:h-[70px] md:w-20 h-24 w-28 car-detail object-contain"/>
             <div className="flex flex-col justify-center lg:gap-2 md:gap-0 gap-2">
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">CR - V</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">CR - V</h3>
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-xs text-[#90A3BF]">SUV</p>
             </div>
             </div>
             <div className="flex flex-col lg:gap-2 md:gap-0 gap-2">
               <p className="2xl:text-xl xl:text-sm sm:text-[10px] text-xs  text-[#90A3BF] text-right">17 July</p>
-              <h3 className="font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$80.00</h3>
+              <h3 className="car-name font-bold text-base sm:text-xs xl:text-base 2xl:text-2xl">$80.00</h3>
             </div>
           </div>
           </div>

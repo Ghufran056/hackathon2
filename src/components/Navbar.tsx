@@ -1,3 +1,4 @@
+import './styles/navbar.css';
 export default function Navbar() {
   return (
     <div className="bg-white h-30">
@@ -78,9 +79,9 @@ export default function Navbar() {
 
         {/* Action Buttons */}
       <div className="flex pb-3 pt-1 px-6  w-full justify-between items-center  md:hidden ">
-        <div className="border rounded-lg py-3 pr-2  flex items-center">
+        <div className="border rounded-lg py-3 pr-2  flex items-center search-box">
         {/* Search Icon for Mobile */}
-        <button className="md:hidden ml-5 ">
+        <button className="md:hidden ml-5 search-button">
           <img
             src="/icons/search.svg"
             alt="Search Icon"
@@ -91,7 +92,7 @@ export default function Navbar() {
          <input
           type="search"
           placeholder="Search something here"
-          className="flex-1 bg-transparent border-none text-lg outline-none pl-2    text-gray-700"
+          className="flex-1 bg-transparent border-none text-lg  outline-none pl-2    text-gray-700 search-input"
         />
         </div>
 

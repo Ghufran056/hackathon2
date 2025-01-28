@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeartButton from "@/components/HeartButton";
-
+import "./home.css"
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -102,17 +102,15 @@ export default function Home() {
 
     
     <div
-        className={`flex flex-col flex-1 transition-all duration-300 ${
-          isOpen ? "ml-0 overflow-x-hidden sm:ml-56 xl:ml-64" : "ml-0"
-        }`}
+        className="flex flex-col flex-1 transition-all duration-300 w-full"
       >
       <div className={`md:hidden  ${isOpen ? "block z-40 bg-black fixed opacity-20 top-0 h-full w-full": "hidden"}`}></div>
 
-        <div className="flex-1  p-8 lg:p-1 md:p-7 w-[425px] md:w-full lg:w-[1024px] xl:w-full  overflow-hidden sm:overflow-visible bg-[#F6F7F9]
+        <div className="flex-1  p-8 lg:p-1 md:p-7 w-full md:w-full lg:w-[1024px] xl:w-full  overflow-hidden sm:overflow-visible bg-[#F6F7F9]
         ">
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-[32px] mt-9 md:mt-0 lg:mt-12 2xl:mt-16 2xl:mb-12 mb-8  lg:ml-7 2xl:mx-32 w-full lg:w-[95%] 2xl:w-[90%] 2xl:gap-16 transition-all duration-300">
 {/* Card 1 for Mobile*/}
-<div className="flex sm:hidden absolute -top-24 left-9 bg-blue-100 rounded-lg 2xl:rounded-2xl shadow-md w-[84%]">
+<div className="flex sm:hidden absolute -top-24 left-8 bg-blue-100 rounded-lg 2xl:rounded-2xl shadow-md w-[84%]">
     <img
       src="/ads/Ads1ForMobile.png"
       alt="Car"
@@ -160,7 +158,7 @@ export default function Home() {
         {/* Search Section */}
 
   <div className="flex flex-col  sm:mt-0 lg:flex-row gap-9 lg:gap-0 2xl:space-x-16 lg:space-x-10 mb-9 mt-28">
-  <div className="flex flex-wrap w-full  bg-white px-6 py-2 xl:px-8 2xl:pl-20 2xl:pr-0 2xl:py-7 rounded-lg 2xl:rounded-2xl">
+  <div className="flex flex-wrap pickup-search w-full  bg-white px-6 py-2 xl:px-8 2xl:pl-20 2xl:pr-0 2xl:py-7 rounded-lg 2xl:rounded-2xl">
 
 <div className="flex w-full mb-4">
   <div className="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 2xl:w-8 rounded-full bg-[rgba(53,99,233,0.3)]  mr-2 mt-3 flex justify-center items-center">
@@ -169,9 +167,9 @@ export default function Home() {
   <h1 className="text-[16px] font-semibold 2xl:text-3xl md:font-bold mt-2 lg:mt-3">Pick-Up</h1>
 </div>
 <div className="flex  w-full lg:w-auto justify-between 2xl:justify-normal 2xl:space-x-16">
-<div className="flex-1 mr-2 mb-2 lg:mb-4 2xl:mr-0  lg:mr-4 md:mr-14">
+<div className="flex-1 pickup-location mr-2 mb-2 lg:mb-4 2xl:mr-0  lg:mr-4 md:mr-14">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Locations</label>
-  <select name="location" id="location" className="h-10 w-full 2xl:w-[230px] mr-4 text-[#90A3BF] lg:mr-4 xl:mr-24 2xl:mr-0  xl:px-0  md:mr-9 md:text-base lg:text-xs 2xl:text-2xl text-xs">
+  <select name="location" id="location" className="h-10 w-full 2xl:w-[230px] pickup-location-input mr-4 text-[#90A3BF] lg:mr-4 xl:mr-24 2xl:mr-0  xl:px-0  md:mr-9 md:text-base lg:text-xs 2xl:text-2xl text-xs">
     <option value="" disabled selected className="text-[#90A3BF]">Select your city</option>
     <option value="Karachi">Karachi</option>
     <option value="Quetta">Quetta</option>
@@ -180,18 +178,18 @@ export default function Home() {
     <option value="Islamabad">Islamabad</option>
   </select>
 </div>
-<div className="flex-1 mb-2 lg:mb-4 px-3 lg:px-3 2xl:w-[310px] xl:px-5 2xl:px-12 md:px-9 border-x-2 border-x-[#C3D4E966] w-32  ">
+<div className="flex-1 mb-2 lg:mb-4 pickup-date px-3 lg:px-3 2xl:w-[310px] xl:px-5 2xl:px-12 md:px-9 border-x-2 border-x-[#C3D4E966] w-32  ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Date</label>
   <input
     type="date"
-    className="p-2 h-10 w-full xl:px-0 2xl:w-[200px] text-[#90A3BF] text-xs md:text-base lg:text-xs 2xl:text-2xl"
+    className="date-input p-2 h-10 w-full xl:px-0 2xl:w-[200px] text-[#90A3BF] text-xs md:text-base lg:text-xs 2xl:text-2xl"
   />
 </div>
-<div className="flex-1 mb-2 sm:mb-4 ml-4 2xl:w-[200px] w-32 ">
+<div className="flex-1 pickup-time mb-2 sm:mb-4 ml-4 2xl:w-[200px] w-32 ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Time</label>
   <input
     type="time"
-    className=" p-2 h-10 w-[90%] 2xl:w-[200px] xl:px-0 text-[#90A3BF] sm:w-full text-xs md:text-base lg:text-xs 2xl:text-2xl"
+    className=" pickup-time-input p-2 h-10 w-[90%] 2xl:w-[200px] xl:px-0 text-[#90A3BF] sm:w-full text-xs md:text-base lg:text-xs 2xl:text-2xl"
   />
 </div>
 </div>
@@ -209,7 +207,7 @@ export default function Home() {
         
 
     {/* Second block */}
-    <div className="flex flex-wrap w-full bg-white px-6 xl:px-8 2xl:pl-20 2xl:pr-0 py-2 2xl:py-7 rounded-lg 2xl:rounded-2xl">
+    <div className="flex dropoff-search flex-wrap w-full bg-white px-6 xl:px-8 2xl:pl-20 2xl:pr-0 py-2 2xl:py-7 rounded-lg 2xl:rounded-2xl">
 
     <div className="flex w-full mb-4">
   <div className="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 2xl:w-8  rounded-full bg-[rgba(92,175,252,0.3)]  mr-2 mt-3 flex justify-center items-center">
@@ -218,9 +216,9 @@ export default function Home() {
   <h1 className="text-[16px] font-semibold 2xl:text-3xl md:font-bold mt-2 lg:mt-3">Drop-Off</h1>
 </div>
 <div className="flex w-full lg:w-auto justify-between 2xl:space-x-16">
-<div className="flex-1 mr-2 mb-2 lg:mb-4 lg:mr-4 md:mr-14">
+<div className="flex-1 dropoff-location mr-2 mb-2 lg:mb-4 lg:mr-4 md:mr-14">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Locations</label>
-  <select name="location" id="location" className="h-10 w-full mr-4 lg:mr-4 xl:mr-24  xl:px-0 text-[#90A3BF] md:mr-9 2xl:mr-0 2xl:w-[230px]  2xl:text-2xl md:text-base lg:text-xs text-xs">
+  <select name="location" id="location" className="h-10 w-full dropoff-location-input mr-4 lg:mr-4 xl:mr-24  xl:px-0 text-[#90A3BF] md:mr-9 2xl:mr-0 2xl:w-[230px]  2xl:text-2xl md:text-base lg:text-xs text-xs">
     <option value="" disabled selected className="">Select your city</option>
     <option value="Karachi">Karachi</option>
     <option value="Quetta">Quetta</option>
@@ -229,18 +227,18 @@ export default function Home() {
     <option value="Islamabad">Islamabad</option>
   </select>
 </div>
-<div className="flex-1 mb-2 lg:mb-4 px-3 lg:px-3 xl:px-5 md:px-9 2xl:px-12 border-x-2 border-x-[#C3D4E966] 2xl:w-[310px] w-32  ">
+<div className="flex-1 mb-2 lg:mb-4 dropoff-date px-3 lg:px-3 xl:px-5 md:px-9 2xl:px-12 border-x-2 border-x-[#C3D4E966] 2xl:w-[310px] w-32  ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Date</label>
   <input
     type="date"
-    className="p-2 h-10 w-full xl:px-0 text-[#90A3BF] text-xs md:text-base lg:text-xs  2xl:text-2xl "
+    className="dropoff-date-input p-2 h-10 w-full xl:px-0 text-[#90A3BF] text-xs md:text-base lg:text-xs  2xl:text-2xl "
   />
 </div>
-<div className="flex-1 mb-2 sm:mb-4 ml-4 2xl:w-[200px] w-32 ">
+<div className="flex-1 mb-2 sm:mb-4 dropoff-time ml-4 2xl:w-[200px] w-32 ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Time</label>
   <input
     type="time"
-    className=" p-2 h-10 w-[90%] xl:px-0 text-[#90A3BF] sm:w-full text-xs md:text-base lg:text-xs  2xl:text-2xl"
+    className="dropoff-time-input p-2 h-10 w-[90%] xl:px-0 text-[#90A3BF] sm:w-full text-xs md:text-base lg:text-xs  2xl:text-2xl"
   />
 </div>
 </div>
@@ -685,7 +683,7 @@ className="px-4 text-[#3563E9] text-base font-medium"
         </div>
 
         {!showMore && (
-      <div className="w-[70%] 2xl:w-[57%] xl:w-[60%] lg:w-[60%] md:w-[62%] float-end">
+      <div className="w-[70%] 2xl:w-[57%] xl:w-[60%] lg:w-[60%] md:w-[62%] float-end showMore-button-div">
         <div className="flex  mt-[19px]  mb-20 xl:py-2 xl:px-12 w-full justify-between items-center">
           <button
             className="bg-blue-600 2xl:text-2xl text-white py-3 2xl:py-4 2xl:px-8 xl:py-3 xl:px-7 md:py-2 px-2 sm:px-6 rounded-sm  2xl:rounded-md "

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeartButton from "@/components/HeartButton";
-
+import "./Category-Car-Rent.css" 
 import Footer from "@/components/Footer";
 
 export default function CategoryCarRent() {
@@ -23,7 +23,7 @@ export default function CategoryCarRent() {
             <button className="h-9 w-9 " onClick={toggleSidebar}><img src="./icons/lines.svg" className="h-full w-full" alt="" /></button>
             <button>
              <img src="/icons/image.svg" alt="Profile Icon" className="block md:hidden w-9 h-9 xl:w-12 xl:h-12 border border-[rgba(195,212,233,0.4)] rounded-full"/></button>
-             <div className="h-16 w-24 block md:hidden rounded bg-white absolute z-40 top-[18%] right-[3.8%]"></div>
+             <div className="h-[70px] w-24 block md:hidden rounded bg-white absolute z-40 top-[14.8%] right-[3.8%]"></div>
             </div>
              <header>  
               <Navbar />
@@ -127,7 +127,7 @@ export default function CategoryCarRent() {
         {/* Search Section */}
 
         <div className="flex flex-col  sm:mt-0 lg:flex-row gap-9 lg:gap-0 2xl:space-x-6  xl:space-x-12 lg:space-x-9 mb-9 2xl:mb-14 mt-28">
-  <div className="flex flex-wrap w-full lg:w-[50%] bg-white px-6 py-2 md:py-3 lg:py-0 xl:px-8 lg:px-4 2xl:pl-10 2xl:pr-10 2xl:py-7 rounded-lg 2xl:rounded-2xl">
+  <div className="flex flex-wrap pickup-search w-full lg:w-[50%] bg-white px-6 py-2 md:py-3 lg:py-0 xl:px-8 lg:px-4 2xl:pl-10 2xl:pr-10 2xl:py-7 rounded-lg 2xl:rounded-2xl">
 
 <div className="flex w-full mb-4">
   <div className="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 2xl:w-8 rounded-full bg-[rgba(53,99,233,0.3)]  mr-2 mt-3 flex justify-center items-center">
@@ -136,9 +136,9 @@ export default function CategoryCarRent() {
   <h1 className="text-[16px] font-semibold 2xl:text-3xl md:font-bold mt-2 lg:mt-3">Pick-Up</h1>
 </div>
 <div className="flex w-full justify-between 2xl:justify-normal 2xl:space-x-16">
-<div className="flex-1 mr-2 mb-2 lg:mb-4 2xl:mr-0  lg:mr-4 md:mr-0">
+<div className="flex-1 pickup-location mr-2 mb-2 lg:mb-4 2xl:mr-0  lg:mr-4 md:mr-0">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Locations</label>
-  <select name="location" id="location" className="h-10 w-full 2xl:w-[230px] mr-4 text-[#90A3BF] lg:mr-4 xl:mr-24 2xl:mr-0  xl:px-0  md:mr-4 md:w-[140px] lg:w-full md:text-base lg:text-xs 2xl:text-2xl text-xs">
+  <select name="location" id="location" className="h-10 w-full 2xl:w-[230px] pickup-location-input mr-4 text-[#90A3BF] lg:mr-4 xl:mr-24 2xl:mr-0  xl:px-0  md:mr-4 md:w-[140px] lg:w-full md:text-base lg:text-xs 2xl:text-2xl text-xs">
     <option value="" disabled selected className="text-[#90A3BF]">Select your city</option>
     <option value="Karachi">Karachi</option>
     <option value="Quetta">Quetta</option>
@@ -147,18 +147,18 @@ export default function CategoryCarRent() {
     <option value="Islamabad">Islamabad</option>
   </select>
 </div>
-<div className="flex-1 mb-2 lg:mb-4 px-3 lg:px-3 2xl:w-[310px] md:w-[160px] lg:w-full xl:px-5 2xl:px-12 md:px-4 border-x-2 border-x-[#C3D4E966] w-32  ">
-  <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Date</label>
+<div className="flex-1 pickup-date mb-2 lg:mb-4 px-3 lg:px-3 2xl:w-[310px] md:w-[160px] lg:w-full xl:px-5 2xl:px-12 md:px-4 border-x-2 border-x-[#C3D4E966] w-32  ">
+  <label className="block  text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Date</label>
   <input
     type="date"
-    className="p-2 h-10 w-full xl:px-0 2xl:w-[200px] md:w-[140px] lg:w-full text-[#90A3BF] text-xs md:text-base lg:text-xs 2xl:text-2xl"
+    className="date-input p-2 h-10 w-full xl:px-0 2xl:w-[200px] md:w-[140px] lg:w-full text-[#90A3BF] text-xs md:text-base lg:text-xs 2xl:text-2xl"
   />
 </div>
-<div className="flex-1 mb-2 sm:mb-4 ml-4 lg:w-[80px] 2xl:w-[200px] md:w-[160px] w-32 ">
+<div className="flex-1 pickup-time mb-2 sm:mb-4 ml-4 lg:w-[80px] 2xl:w-[200px] md:w-[160px] w-32 ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Time</label>
   <input
     type="time"
-    className=" p-2 h-10 w-[90%] 2xl:w-[200px] xl:px-0 text-[#90A3BF] sm:w-full text-xs md:w-[140px] lg:w-full md:text-base lg:text-xs 2xl:text-2xl"
+    className="pickup-time-input p-2 h-10 w-[90%] 2xl:w-[200px] xl:px-0 text-[#90A3BF] sm:w-full text-xs md:w-[140px] lg:w-full md:text-base lg:text-xs 2xl:text-2xl"
   />
 </div>
 </div>
@@ -177,7 +177,7 @@ export default function CategoryCarRent() {
         
 
     {/* Second block */}
-    <div className="flex flex-wrap w-full lg:w-[50%] bg-white px-6 xl:px-8 lg:px-4 2xl:pl-10 2xl:pr-10 py-2 2xl:py-7 rounded-lg 2xl:rounded-2xl">
+    <div className="flex dropoff-search flex-wrap w-full lg:w-[50%] bg-white px-6 xl:px-8 lg:px-4 2xl:pl-10 2xl:pr-10 py-2 2xl:py-7 rounded-lg 2xl:rounded-2xl">
 
     <div className="flex w-full mb-4">
   <div className="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 2xl:w-8  rounded-full bg-[rgba(92,175,252,0.3)]  mr-2 mt-3 flex justify-center items-center">
@@ -186,9 +186,9 @@ export default function CategoryCarRent() {
   <h1 className="text-[16px] font-semibold 2xl:text-3xl md:font-bold mt-2 lg:mt-3">Drop-Off</h1>
 </div>
 <div className="flex w-full justify-between 2xl:space-x-16">
-<div className="flex-1 mr-2 mb-2 lg:mb-4 lg:mr-4 md:mr-0">
+<div className="flex-1 dropoff-location mr-2 mb-2 lg:mb-4 lg:mr-4 md:mr-0">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Locations</label>
-  <select name="location" id="location" className="h-10 w-full mr-4 lg:mr-4 xl:mr-24  xl:px-0 text-[#90A3BF] md:w-[140px] lg:w-full md:mr-4 2xl:mr-0 2xl:w-[230px]  2xl:text-2xl md:text-base lg:text-xs text-xs">
+  <select name="location" id="location" className="h-10 w-full mr-4 lg:mr-4 xl:mr-24 dropoff-location-input  xl:px-0 text-[#90A3BF] md:w-[140px] lg:w-full md:mr-4 2xl:mr-0 2xl:w-[230px]  2xl:text-2xl md:text-base lg:text-xs text-xs">
     <option value="" disabled selected className="">Select your city</option>
     <option value="Karachi">Karachi</option>
     <option value="Quetta">Quetta</option>
@@ -197,18 +197,18 @@ export default function CategoryCarRent() {
     <option value="Islamabad">Islamabad</option>
   </select>
 </div>
-<div className="flex-1 mb-2 lg:mb-4 px-3 lg:px-3 xl:px-5 md:px-4 2xl:px-12 md:w-[170px] lg:w-full border-x-2 border-x-[#C3D4E966] 2xl:w-[310px] w-32  ">
+<div className="flex-1 dropoff-date mb-2 lg:mb-4 px-3 lg:px-3 xl:px-5 md:px-4 2xl:px-12 md:w-[170px] lg:w-full border-x-2 border-x-[#C3D4E966] 2xl:w-[310px] w-32  ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Date</label>
   <input
     type="date"
-    className="p-2 h-10 w-full xl:px-0 text-[#90A3BF] md:w-[140px] lg:w-full text-xs md:text-base lg:text-xs  2xl:text-2xl "
+    className="dropoff-date-input p-2 h-10 w-full xl:px-0 text-[#90A3BF] md:w-[140px] lg:w-full text-xs md:text-base lg:text-xs  2xl:text-2xl "
   />
 </div>
-<div className="flex-1 mb-2 sm:mb-4 ml-4 lg:w-[80px] md:w-[170px]  2xl:w-[200px] w-32 ">
+<div className="flex-1 dropoff-time mb-2 sm:mb-4 ml-4 lg:w-[80px] md:w-[170px]  2xl:w-[200px] w-32 ">
   <label className="block text-sm md:text-base  lg:text-sm xl:text-md 2xl:text-3xl font-bold mb-1">Time</label>
   <input
     type="time"
-    className=" p-2 h-10 w-[90%] xl:px-0 text-[#90A3BF] md:w-[140px] lg:w-full sm:w-full text-xs md:text-base lg:text-xs  2xl:text-2xl"
+    className="dropoff-time-input p-2 h-10 w-[90%] xl:px-0 text-[#90A3BF] md:w-[140px] lg:w-full sm:w-full text-xs md:text-base lg:text-xs  2xl:text-2xl"
   />
 </div>
 </div>
@@ -620,7 +620,7 @@ export default function CategoryCarRent() {
         
 
      {!showMore && (
-      <div className="w-[70%] 2xl:w-[58%] xl:w-[62%] lg:w-[60%] md:w-[65%] float-end">
+      <div className="w-[70%] 2xl:w-[58%] xl:w-[62%] lg:w-[60%] md:w-[65%] float-end showMore-button-div">
         <div className="flex  mt-[19px]  mb-20 xl:py-2 xl:px-12 w-full justify-between items-center">
           <button
             className="bg-blue-600 2xl:text-2xl text-white py-3 2xl:py-4 2xl:px-8 xl:py-3 xl:px-5 md:py-2 px-2 sm:px-6 rounded-sm  2xl:rounded-md "
